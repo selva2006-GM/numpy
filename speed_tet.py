@@ -1,0 +1,18 @@
+import numpy as np
+import time
+
+# Create large list and array
+list1 = list(range(1_000_000))
+array1 = np.array(list1)
+
+# List operation: multiply each element by 2 using loop
+start = time.time()
+list_result = [x * 2 for x in list1]
+end = time.time()
+print(f"List operation time:{(end - start):.3f}seconds")
+
+# Array operation: multiply by 2 (vectorized)
+start = time.time()
+array_result = array1 * 2
+end = time.time()
+print(f"Array operation time:{(end - start):.3f}seconds")
